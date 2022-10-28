@@ -1,6 +1,6 @@
 <template>
     <!-- FOOTER -->
-    <footer class="footer navbar-fixed-bottom bg-dark text-white p-3 ">
+    <footer class="footer bg-dark text-white p-3 mt-9">
         <div class="container">
             <div class="row pt-5">
                 <div class="col-md-6">
@@ -40,3 +40,9 @@ export default {
     components: {},
 }
 </script>
+
+<style scoped>
+.mt-9 {
+    margin-top: 9rem;
+}
+</style>
