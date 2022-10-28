@@ -1,8 +1,8 @@
 <template>
     <div>
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <nav class="navbar navbar-expand-md navbar-warning fixed-top bg-warning py-3">
             <div class="container">
-                <a class="navbar-brand" href="#">Al-Qur'an Online</a>
+                <a class="navbar-brand" href="#">AL-QUR'AN ONLINE</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                     aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -13,15 +13,19 @@
                             <router-link :to="{ name: 'home' }" class="nav-link" aria-current="page">HOME</router-link>
                         </li>
                     </ul>
-                    <!-- <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-success" type="submit">Search</button>
-                    </form> -->
+                    <a href="https://krisproject.my.id" class="btn btn-success float-end" target="_blank">KRISPROJECT 🔗
+                    </a>
                 </div>
             </div>
         </nav>
     </div>
 </template>
+
+<style scoped>
+.navbar-brand {
+    font-weight: bold;
+}
+</style>
 
 <script>
 export default {

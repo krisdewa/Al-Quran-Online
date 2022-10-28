@@ -5,16 +5,19 @@
     <!-- render vue router -->
     <router-view></router-view>
 
+    <footer-vue />
   </div>
 </template>
 
 <script>
 import NavbarVue from './components/Navbar.vue'
+import FooterVue from './components/Footer.vue'
 
 export default {
   name: 'App',
   components: {
     NavbarVue,
+    FooterVue,
   },
 }
 </script>
@@ -29,5 +32,4 @@ export default {
 body {
   background-color: lightgray !important;
 }
-
 </style>
