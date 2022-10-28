@@ -1,6 +1,6 @@
 <template>
     <!-- FOOTER -->
-    <footer class="bg-dark text-white p-3">
+    <footer class="footer navbar-fixed-bottom bg-dark text-white p-3 ">
         <div class="container">
             <div class="row pt-5">
                 <div class="col-md-6">
