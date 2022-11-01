@@ -2,7 +2,7 @@
     <main class="container mt-custom ">
         <div class="bg-success text-white p-5 rounded text-center shadow">
             <h1>Al-Qur'an Online 📖</h1>
-            <p class="lead">
+            <p class="lead content">
                 Baca Al-Qur'an secara Online dimana dan kapanpun saja dengan mudah
                 <br>
                 Al-Qur'an ini yang bersumber dari
@@ -40,12 +40,6 @@
     <FooterVue />
 </template>
 
-<style scoped>
-.mt-custom {
-    margin-top: 95px;
-}
-</style>
-
 <script>
 import SurahVue from './Surah.vue';
 import LoadingVue from '../components/Loading.vue';
@@ -60,4 +54,17 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+.mt-custom {
+    margin-top: 95px;
+}
+
+@media screen and (max-width: 768px) {
+    .content {
+        font-size: 12px;
+    }
+}
+</style>
+
 
