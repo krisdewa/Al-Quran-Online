@@ -15,7 +15,7 @@
                         <AnimatedPlaceholder width="160px" height="20px" borderRadius="5px" />
                     </span>
                     <h6 class="">
-                        <AnimatedPlaceholder width="350px" height="20px" borderRadius="5px" />
+                        <AnimatedPlaceholder width="100%" height="20px" borderRadius="5px" />
                     </h6>
                 </div>
 
