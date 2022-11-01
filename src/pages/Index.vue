@@ -28,12 +28,13 @@
         </div>
     </div>
 
+    <div v-if="errMsg">{{ errMsg }}</div>
     <Suspense>
         <template #default>
             <SurahVue />
         </template>
         <template #fallback>
-            <LoadingVue />
+            <SurahSkeleton />
         </template>
     </Suspense>
 
@@ -41,17 +42,28 @@
 </template>
 
 <script>
+import { onErrorCaptured, ref } from 'vue';
 import SurahVue from './Surah.vue';
-import LoadingVue from '../components/Loading.vue';
 import FooterVue from '../components/Footer.vue';
+import SurahSkeleton from './Skeleton/SurahSkeleton.vue';
 
 export default {
     name: 'IndexVue',
     components: {
         SurahVue,
-        LoadingVue,
         FooterVue,
-    }
+        SurahSkeleton,
+    },
+    setup() {
+        const errMsg = ref(null)
+        onErrorCaptured(() => {
+            errMsg.value = 'Something went wrong!'
+        })
+
+        return {
+            errMsg
+        }
+    },
 }
 </script>
 

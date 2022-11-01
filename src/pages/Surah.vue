@@ -1,7 +1,7 @@
 <template>
     <!-- card -->
     <div class="container mt-2 mb-5">
-        
+
 
         <!-- CARD -->
         <div class="row">
@@ -44,7 +44,8 @@ export default {
         // const response = await fetch('http://quran-api.santrikoding.com/api/surah')
         // quran.value = await response.json()
 
-        // fetch menggunakan axios
+
+        // await new Promise(resolve => setTimeout(resolve, 5000));
         await axios.get('http://quran-api.santrikoding.com/api/surah')
             .then(response => {
                 quran.value = response.data

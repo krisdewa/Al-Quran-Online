@@ -4,19 +4,20 @@
             <DetailSurahVue />
         </template>
         <template #fallback>
-            <LoadingVue />
+            <!-- <LoadingVue /> -->
+            <DetailSurahSkeleton />
         </template>
     </Suspense>
 </template>
 <script>
 import DetailSurahVue from './DetailSurah.vue';
-import LoadingVue from '../../components/Loading.vue';
+import DetailSurahSkeleton from '../../pages/Skeleton/DetailSurahSkeleton.vue';
 
 export default {
     name: 'DetailSurah',
     components: {
         DetailSurahVue,
-        LoadingVue,
+        DetailSurahSkeleton,
     },
 };
 
