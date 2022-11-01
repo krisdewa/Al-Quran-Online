@@ -1,15 +1,7 @@
 <template>
     <!-- card -->
     <div class="container mt-2 mb-5">
-        <!-- SEARCH -->
-        <div class="row">
-            <div class="col-md-12 mt-3">
-                <div class="input-group">
-                    <input type="text" class="form-control p-3" placeholder="Ketik nama surat dan enter..">
-                </div>
-            </div>
-        </div>
-        <!-- END SEARCH -->
+        
 
         <!-- CARD -->
         <div class="row">
@@ -38,44 +30,62 @@
 
 <script>
 import axios from 'axios'
-import { onMounted, ref } from 'vue'
+import { ref } from 'vue'
+// import { resolve } from 'path'
+// import { onMounted, ref } from 'vue'
 
 export default {
     name: 'SurahVue',
     components: {},
-    setup() {
+    async setup() {
+        const quran = ref([])
 
-        //reactive state
-        let quran = ref([])
+        // fetch data menggunakan json
+        // const response = await fetch('http://quran-api.santrikoding.com/api/surah')
+        // quran.value = await response.json()
 
-        //mounted
-        onMounted(() => {
+        // fetch menggunakan axios
+        await axios.get('http://quran-api.santrikoding.com/api/surah')
+            .then(response => {
+                quran.value = response.data
+            }).catch(error => {
+                console.log(error.response.data)
+            })
 
-            //panggil function "getDataPosts" 
-            getDataQuran()
-
-        })
-
-        //function "getDataPosts"
-        function getDataQuran() {
-
-            axios.get('http://quran-api.santrikoding.com/api/surah')
-                .then(response => {
-                    quran.value = response.data
-                }).catch(error => {
-                    console.log(error.response.data)
-                })
-        }
-
-        //return
         return {
-            quran,
-            getDataQuran,
+            quran
         }
+    },
 
-    }
+    // code using onMounted
+    // setup() {
+    //     //reactive state
+    //     let quran = ref([])
+
+    //     //mounted
+    //     onMounted(() => {
+    //         //panggil function "getDataPosts"
+    //         getDataQuran()
+    //     })
+    //     //function "getDataPosts"
+    //     function getDataQuran() {
+    //         axios.get('http://quran-api.santrikoding.com/api/surah')
+    //             .then(response => {
+    //                 quran.value = response.data
+    //             }).catch(error => {
+    //                 console.log(error.response.data)
+    //             })
+    //     }
+    //     //return
+    //     return {
+    //         quran,
+    //         getDataQuran,
+    //     }
+    // },
 
 }
+
+
 </script>
 
 <style scoped>

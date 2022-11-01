@@ -7,14 +7,14 @@ const routes = [
         path: "/",
         name: "home",
         component: () =>
-            import(/* webpackChunkName: "home" */ "@/components/Index.vue"),
+            import(/* webpackChunkName: "home" */ "@/pages/Index.vue"),
     },
     {
         path: "/surah/:id",
         name: "surah",
         component: () =>
             import(
-                /* webpackChunkName: "home" */ "@/components/Surah/Surah.vue"
+                /* webpackChunkName: "home" */ "@/pages/DetailSurah/DetailSurahInfo.vue"
             ),
     },
 ];

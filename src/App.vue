@@ -1,24 +1,22 @@
 <template>
-  <div>
-    <navbar-vue />
+    <div>
+        <navbar-vue />
 
-    <!-- render vue router -->
-    <router-view></router-view>
-
-    <footer-vue />
-  </div>
+        <!-- render vue router -->
+        <!-- <keep-alive> -->
+        <router-view :key="$route.fullPath"></router-view>
+        <!-- </keep-alive> -->
+    </div>
 </template>
 
 <script>
 import NavbarVue from './components/Navbar.vue'
-import FooterVue from './components/Footer.vue'
 
 export default {
-  name: 'App',
-  components: {
-    NavbarVue,
-    FooterVue,
-  },
+    name: 'App',
+    components: {
+        NavbarVue,
+    },
 }
 </script>
 
@@ -26,10 +24,10 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 
 * {
-  font-family: 'Quicksand', sans-serif;
+    font-family: 'Quicksand', sans-serif;
 }
 
 body {
-  background-color: lightgray !important;
+    background-color: lightgray !important;
 }
 </style>
