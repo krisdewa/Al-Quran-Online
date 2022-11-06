@@ -39,7 +39,7 @@
                                     <AnimatedPlaceholder width="150px" height="20px" borderRadius="5px" />
                                 </h5>
                                 <p class="card-text mt-4 fst-italic">
-                                    <AnimatedPlaceholder width="500px" height="20px" borderRadius="5px" />
+                                    <AnimatedPlaceholder width="200px" height="20px" borderRadius="5px" />
                                 </p>
                             </div>
                             <div class="col-md-6 col-12">
@@ -47,7 +47,7 @@
                                     <AnimatedPlaceholder width="70px" height="20px" borderRadius="5px" />
                                 </h2>
                                 <p class="text-end">
-                                    <AnimatedPlaceholder width="150px" height="20px" borderRadius="5px" />
+                                    <AnimatedPlaceholder width="100px" height="20px" borderRadius="5px" />
                                 </p>
                             </div>
                         </div>
