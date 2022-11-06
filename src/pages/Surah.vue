@@ -1,8 +1,6 @@
 <template>
     <!-- card -->
-    <div class="container mt-2 mb-5">
-
-
+    <div class="container mb-5">
         <!-- CARD -->
         <div class="row">
             <div class="col-md-4 col-12" v-for="(surah, index) in quran" :key="index">
@@ -46,6 +44,8 @@ export default {
 
 
         // await new Promise(resolve => setTimeout(resolve, 5000));
+
+        // fetch data menggunakan axios
         await axios.get('http://quran-api.santrikoding.com/api/surah')
             .then(response => {
                 quran.value = response.data
@@ -85,8 +85,6 @@ export default {
     // },
 
 }
-
-
 </script>
 
 <style scoped>

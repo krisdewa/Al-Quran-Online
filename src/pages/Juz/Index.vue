@@ -11,12 +11,13 @@
         </div>
     </div>
 
-    <div v-if="errMsg" class="text-center mt-3 mb-4">{{ errMsg }}</div>
+    <div v-if="errMsg" class="text-center mt-5 mb-5 h3">{{ errMsg }}</div>
     <Suspense v-else>
         <template #default>
-            <SurahVue />
+            <JuzVue />
         </template>
         <template #fallback>
+            <!-- <div class="text-center mb-5 mt-5 h3">Loading...</div> -->
             <SurahSkeleton />
         </template>
     </Suspense>
@@ -26,23 +27,25 @@
 
 <script>
 import { onErrorCaptured, ref } from 'vue';
-import HomeVue from './Home.vue';
-import SurahVue from './Surah.vue';
-import FooterVue from '../components/Footer.vue';
-import SurahSkeleton from './Skeleton/SurahSkeleton.vue';
+import HomeVue from '../Home.vue';
+import JuzVue from './Juz.vue';
+import FooterVue from '../../components/Footer.vue';
+
+import SurahSkeleton from '../Skeleton/SurahSkeleton.vue';
 
 export default {
     name: 'IndexVue',
     components: {
         HomeVue,
-        SurahVue,
+        JuzVue,
         FooterVue,
         SurahSkeleton,
     },
     setup() {
         const errMsg = ref(null)
         onErrorCaptured(() => {
-            errMsg.value = 'Something went wrong!, Please try again later.'
+            // errMsg.value = 'Something went wrong!, Please try again later.'
+            errMsg.value = 'Coming Soon!'
         })
 
         return {
@@ -53,15 +56,7 @@ export default {
 </script>
 
 <style scoped>
-.mt-custom {
-    margin-top: 95px;
-}
 
-@media screen and (max-width: 768px) {
-    .content {
-        font-size: 12px;
-    }
-}
 </style>
 
 
