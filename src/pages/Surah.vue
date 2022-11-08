@@ -7,7 +7,7 @@
                 <router-link :to="{ name: 'surah', params: { id: surah.nomor } }"
                     class="text-decoration-none text-dark">
                     <div class="card mt-4">
-                        <div class="card-body">
+                        <div class="card-body card-custom">
                             <h2 class="float-end"> {{ surah.nama }} </h2>
                             <h5 class="card-title nama-latin"> {{ index + 1 }}. {{ surah.nama_latin }}
                                 <small>({{ surah.jumlah_ayat }} ayat)</small>
@@ -88,11 +88,22 @@ export default {
 </script>
 
 <style scoped>
+.card {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 3px;
+}
+
 .card-body:hover {
     background-color: rgb(246, 246, 246);
     box-shadow: 0 0px 10px 0 rgba(0, 0, 0, 0.5);
-    border-radius: 5px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 3px;
 }
+
 
 h5.nama-latin {
     font-weight: 700;

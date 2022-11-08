@@ -1,23 +1,28 @@
 <template>
     <main class="container mt-custom">
         <div class="bg-success p-4 rounded shadow text-white">
-            <h1 v-text="quran.nama" class="float-end"></h1>
-            <h1 v-text="quran.nama_latin" class=""></h1>
-            <hr>
+            <!-- <h1 v-text="quran.nama" class="float-end"></h1>
+            <h1 v-text="quran.nama_latin" class=""></h1> -->
+
+            <!-- <hr> -->
             <div class="row">
                 <div class="col-md-6">
-                    <span v-text="'Arti : ' + quran.arti" class="lead"></span>
+                    <h2 class="fw-bold"><span v-text="quran.nama_latin" /> - <span v-text="quran.nama" /></h2>
+                    <span v-text="quran.arti" class="lead"></span>
                     <h6 v-text="'📃 Jumlah Ayat : ' + quran.jumlah_ayat + ' 🗺️ Tempat Turun : ' + quran.tempat_turun"
                         class="">
                     </h6>
                 </div>
                 <div class="col-md-6 text-end justify-content-end">
                     <div class="">
-                        <!-- <a class="btn btn-dark btn-lg mt-2" href="https://krisproject.my.id" target="_blank"
-                            role="button">
-                            ▶️ PLAY AUDIO
-                        </a> -->
-                        <audio controls v-if="quran.audio" class="">
+                        <div class="mt-1">
+                            <a class="btn btn-warning fw-bold" href="" role="button"> Lihat Tafsir </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 text-center justify-content-center">
+                    <div class="mt-3">
+                        <audio controls v-if="quran.audio">
                             <source v-bind:src="quran.audio" type="audio/mpeg" />
                             Your browser does not support the audio element.
                         </audio>
@@ -44,7 +49,7 @@
                 </div>
             </div>
         </div>
-        
+
     </main>
 
     <div class="container mb-5">
@@ -247,6 +252,13 @@ export default {
     margin-top: 95px;
 }
 
+.card {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 3px;
+}
+
 .card-body:hover {
     box-shadow: 0 0px 10px 0 rgb(181, 181, 181);
     border-radius: 5px;
@@ -260,7 +272,8 @@ export default {
 audio {
     margin-top: 5px;
     background-color: #ffc107;
-    border-radius: 10px;
+    border-radius: 5px;
+    width: 100%;
 }
 
 audio::-webkit-media-controls-panel {
