@@ -52,14 +52,26 @@
             <div class="col-md-12" v-for="(ayat, index) in ayat" :key="index">
                 <div class="card mt-3 shadow-sm">
                     <div class="card-body">
-                        <div class="row">
+                        <!-- <div class="row">
                             <div class="col-md-6 col-12">
                                 <h5 class="card-title nama-latin"> {{ ayat.surah }} : {{ ayat.nomor }} </h5>
                                 <p class="card-text mt-4 fst-italic"> {{ ayat.idn }}</p>
                             </div>
+                            <div class="col-md-6 col-12 text-end">
+                                <h2> {{ ayat.ar }} </h2>
+                                <p class="tr"><span v-html="ayat.tr"> </span></p>
+                            </div>
+                        </div> -->
+                        <div class="row">
+                            <div class="col-md-6 col-12">
+                                <h5 class="card-title nama-latin mb-2"> {{ ayat.surah }} : {{ ayat.nomor }} </h5>
+                            </div>
                             <div class="col-md-6 col-12">
                                 <h2 class="text-end"> {{ ayat.ar }} </h2>
-                                <p class="text-end" v-html="ayat.tr"></p>
+                                <p class="text-end"><span v-html="ayat.tr"> </span></p>
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <p class="card-text fst-italic text-muted"> {{ ayat.idn }}</p>
                             </div>
                         </div>
                     </div>
@@ -118,7 +130,7 @@ export default {
         const route = useRoute()
 
         // get API from Backend
-        await axios.get(`http://quran-api.santrikoding.com/api/surah/${route.params.id}`)
+        await axios.get(`https://equran.id/api/surat/${route.params.id}`)
             .then(response => {
 
                 //assign state posts with response data
@@ -233,6 +245,10 @@ export default {
 .card-body:hover {
     box-shadow: 0 0px 10px 0 rgb(181, 181, 181);
     border-radius: 5px;
+}
+
+.card-text {
+    margin-top: -10px;
 }
 
 /* Specifies the size of the audio container */

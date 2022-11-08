@@ -46,7 +46,7 @@ export default {
         // await new Promise(resolve => setTimeout(resolve, 5000));
 
         // fetch data menggunakan axios
-        await axios.get('http://quran-api.santrikoding.com/api/surah')
+        await axios.get('https://equran.id/api/surat')
             .then(response => {
                 quran.value = response.data
             }).catch(error => {
