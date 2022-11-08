@@ -16,9 +16,9 @@
                     <h5>Contribute Here</h5>
                     <ul class="list-unstyled">
                         <li><a href="https://github.com/krisdewa/Al-Quran-Online"
-                                class="text-decoration-none text-white">Github </a></li>
-                        <li><a href="https://www.instagram.com/krisdewa_/?hl=id"
-                                class="text-decoration-none text-white">Instagram</a></li>
+                                class="text-decoration-none text-white" target="_blank">Github </a></li>
+                        <li><a href="https://www.instagram.com/krisdewa_/?hl=id" class="text-decoration-none text-white"
+                                target="_blank">Instagram</a></li>
                     </ul>
                 </div>
             </div>

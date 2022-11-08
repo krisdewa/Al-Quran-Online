@@ -22,3 +22,7 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### Source API from :
+1. https://quran-api.santrikoding.com/api/surah
+2. https://api-quran-id.herokuapp.com/juz
