@@ -40,6 +40,22 @@ export default {
 </script>
 
 <style scoped>
+.card {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 3px;
+}
+
+.card-body:hover {
+    background-color: rgb(246, 246, 246);
+    box-shadow: 0 0px 10px 0 rgba(0, 0, 0, 0.5);
+    border-top-left-radius: 3px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 3px;
+}
+
 h5.nama-latin {
     font-weight: 700;
 }

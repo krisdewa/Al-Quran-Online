@@ -261,7 +261,10 @@ export default {
 
 .card-body:hover {
     box-shadow: 0 0px 10px 0 rgb(181, 181, 181);
-    border-radius: 5px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 3px;
 }
 
 .card-text {
