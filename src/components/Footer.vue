@@ -15,8 +15,10 @@
                 <div class="col-md-6">
                     <h5>Contribute Here</h5>
                     <ul class="list-unstyled">
-                        <li><a href="/" class="text-decoration-none text-white">Github </a></li>
-                        <li><a href="/surah" class="text-decoration-none text-white">Instagram</a></li>
+                        <li><a href="https://github.com/krisdewa/Al-Quran-Online"
+                                class="text-decoration-none text-white">Github </a></li>
+                        <li><a href="https://www.instagram.com/krisdewa_/?hl=id"
+                                class="text-decoration-none text-white">Instagram</a></li>
                     </ul>
                 </div>
             </div>
