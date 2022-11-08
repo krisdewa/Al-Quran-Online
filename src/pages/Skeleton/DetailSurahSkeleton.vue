@@ -21,11 +21,25 @@
 
                 <div class="col-md-6 text-end justify-content-end">
                     <div class="">
+                        <AnimatedPlaceholder width="50%" height="50px" borderRadius="5px" class="mt-2" />
                     </div>
                 </div>
             </div>
-            <hr>
         </div>
+
+        <div class="row mt-3">
+            <div class="col-md-6">
+                <div class="d-grid gap-2">
+                    <AnimatedPlaceholder width="100%" height="35px" borderRadius="5px" />
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="d-grid gap-2">
+                    <AnimatedPlaceholder width="100%" height="35px" borderRadius="5px" class="float-end" />
+                </div>
+            </div>
+        </div>
+
     </main>
 
     <div class="container mb-5">

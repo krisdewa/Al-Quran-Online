@@ -4,9 +4,10 @@ import App from "./App.vue";
 // import booostrap
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 //import router
-import router from './router';
+import router from "./router";
 
 // create app
 const app = createApp(App);

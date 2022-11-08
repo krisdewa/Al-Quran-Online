@@ -17,49 +17,44 @@
                             role="button">
                             ▶️ PLAY AUDIO
                         </a> -->
-
-
-                        <!-- <a class="btn btn-dark btn-lg mt-2" href="https://krisproject.my.id" target="_blank"
-                            role="button">
-                        </a>
-
-                        <router-link :to="{ name: 'quran', params: { id: quran.nomor } }"
-                            class="btn btn-dark btn-lg mt-2">
-                            Baca Surah Selanjutnya
-                        </router-link> -->
+                        <audio controls v-if="quran.audio" class="">
+                            <source v-bind:src="quran.audio" type="audio/mpeg" />
+                            Your browser does not support the audio element.
+                        </audio>
                     </div>
                 </div>
             </div>
-            <hr>
-            <!-- <div class="row mt-4">
-                <div class="col-md-6">
-                    <div v-if="quran.surat_sebelumnya != false">
-                        <router-link :to="{ name: 'surah', params: { id: quran.surat_sebelumnya } }"
-                            class="btn btn-dark btn-lg">
-                            Baca Surah Sebelumnya
-                        </router-link>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="d-grid gap-2" v-if="quran.surat_sebelumnya != false">
-                        <router-link :to="{ name: 'surah', params: { id: surat_selanjutnya.id } }"
-                            class="btn btn-dark btn-lg float-end">
-                            {{ quran.surat_selanjutnya.nama_latin }} Baca Surah Selanjutnya
-                        </router-link>
-                    </div>
-                </div>
-            </div> -->
         </div>
+
+        <div class="row mt-2">
+            <div class="col-md-6 mt-1" v-if="quran.prev != false">
+                <div class="d-grid gap-2">
+                    <router-link :to="{ name: 'surah', params: { id: quran.prev_id } }" class="btn btn-success">
+                        <i class="bi bi-arrow-left"></i> Surah Sebelumnya ({{ quran.prevsurah }})
+                    </router-link>
+                </div>
+            </div>
+            <div class="col-md-6" v-if="quran.prev == false"></div>
+            <div class="col-md-6 mt-1" v-if="quran.next != false">
+                <div class="d-grid gap-2">
+                    <router-link :to="{ name: 'surah', params: { id: quran.next_id } }"
+                        class="btn btn-success float-end">
+                        ({{ quran.nextsurah }}) Surah Selanjutnya <i class="bi bi-arrow-right"></i>
+                    </router-link>
+                </div>
+            </div>
+        </div>
+
     </main>
 
     <div class="container mb-5">
         <div class="row">
             <div class="col-md-12" v-for="(ayat, index) in ayat" :key="index">
-                <div class="card mt-4 shadow-sm">
+                <div class="card mt-3 shadow-sm">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-6 col-12">
-                                <h5 class="card-title nama-latin"> Surat {{ ayat.surah }} Ayat {{ ayat.nomor }} </h5>
+                                <h5 class="card-title nama-latin"> {{ ayat.surah }} : {{ ayat.nomor }} </h5>
                                 <p class="card-text mt-4 fst-italic"> {{ ayat.idn }}</p>
                             </div>
                             <div class="col-md-6 col-12">
@@ -73,17 +68,6 @@
         </div>
     </div>
 </template>
-
-<style scoped>
-.mt-custom {
-    margin-top: 95px;
-}
-
-.card-body:hover {
-    box-shadow: 0 0px 10px 0 rgb(181, 181, 181);
-    border-radius: 5px;
-}
-</style>
 
 <script>
 import { reactive, ref } from 'vue'
@@ -105,6 +89,7 @@ export default {
             ayat: [],
             jumlah_ayat: '',
             tempat_turun: '',
+            audio: '',
             surat_selanjutnya: {
                 id: '',
                 nama: '',
@@ -126,15 +111,6 @@ export default {
         //reactive state
         let ayat = ref([])
 
-        let surat_selanjutnya = ref({
-            id: '',
-            nama: '',
-            nama_latin: '',
-            arti: '',
-            jumlah_ayat: '',
-            tempat_turun: '',
-        })
-
         //vue router
         const router = useRouter()
 
@@ -152,10 +128,14 @@ export default {
                 quran.ayat = response.data.ayat
                 quran.jumlah_ayat = response.data.jumlah_ayat
                 quran.tempat_turun = response.data.tempat_turun
-                quran.surat_selanjutnya = response.data.surat_selanjutnya.id
-                quran.surat_sebelumnya = response.data.surat_sebelumnya.id
+                quran.audio = response.data.audio
+                quran.next = response.data.surat_selanjutnya
+                quran.prev = response.data.surat_sebelumnya
+                quran.next_id = response.data.surat_selanjutnya.id
+                quran.prev_id = response.data.surat_sebelumnya.id
+                quran.nextsurah = response.data.surat_selanjutnya.nama_latin
+                quran.prevsurah = response.data.surat_sebelumnya.nama_latin
 
-                surat_selanjutnya.value = response.data.surat_selanjutnya.id
                 //assign state posts with response data
                 ayat.value = response.data.ayat
             }).catch(error => {
@@ -244,3 +224,26 @@ export default {
     // },
 }
 </script>
+
+<style scoped>
+.mt-custom {
+    margin-top: 95px;
+}
+
+.card-body:hover {
+    box-shadow: 0 0px 10px 0 rgb(181, 181, 181);
+    border-radius: 5px;
+}
+
+/* Specifies the size of the audio container */
+audio {
+    margin-top: 5px;
+    background-color: #ffc107;
+    border-radius: 10px;
+}
+
+audio::-webkit-media-controls-panel {
+    background-color: #ffc107;
+    justify-content: center;
+}
+</style>
