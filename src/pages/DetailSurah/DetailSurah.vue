@@ -44,7 +44,7 @@
                 </div>
             </div>
         </div>
-
+        
     </main>
 
     <div class="container mb-5">
@@ -79,16 +79,21 @@
             </div>
         </div>
     </div>
+
+    <footer-vue />
 </template>
 
 <script>
 import { reactive, ref } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import axios from 'axios'
+import FooterVue from '@/components/Footer.vue'
 
 export default {
     name: 'DetailSurahVue',
-    components: {},
+    components: {
+        FooterVue,
+    },
     data() {
         return {}
     },
