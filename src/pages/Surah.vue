@@ -18,7 +18,7 @@
                     <div class="card mt-4">
                         <div class="card-body card-custom">
                             <h2 class="float-end"> {{ surah.nama }} </h2>
-                            <h5 class="card-title nama-latin"> {{ index + 1 }}. {{ surah.nama_latin }}
+                            <h5 class="card-title nama-latin"> {{ surah.nomor }}. {{ surah.nama_latin }}
                                 <small>({{ surah.jumlah_ayat }} ayat)</small>
                             </h5>
                             <p class="card-text">{{ surah.arti }}</p>
