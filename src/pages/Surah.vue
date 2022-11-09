@@ -1,9 +1,18 @@
 <template>
-    <!-- card -->
-    <div class="container mb-5">
-        <!-- CARD -->
+
+    <div class="container mb-2">
         <div class="row">
-            <div class="col-md-4 col-12" v-for="(surah, index) in quran" :key="index">
+            <div class="col-md-12">
+                <div class="input-group">
+                    <input type="text" v-model="input" class="form-control p-3" placeholder="Ketik nama surat...">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mb-5">
+        <div class="row">
+            <div class="col-md-4 col-12" v-for="(surah, index) in filteredQuran" :key="index">
                 <router-link :to="{ name: 'surah', params: { id: surah.nomor } }"
                     class="text-decoration-none text-dark">
                     <div class="card mt-4">
@@ -21,9 +30,7 @@
                 </router-link>
             </div>
         </div>
-        <!-- END CARD -->
     </div>
-    <!-- card -->
 </template>
 
 <script>
@@ -37,11 +44,11 @@ export default {
     components: {},
     async setup() {
         const quran = ref([])
+        const input = ref('');
 
-        // fetch data menggunakan json
+        // fetch data menggunakan fetch API
         // const response = await fetch('http://quran-api.santrikoding.com/api/surah')
         // quran.value = await response.json()
-
 
         // await new Promise(resolve => setTimeout(resolve, 5000));
 
@@ -54,9 +61,18 @@ export default {
             })
 
         return {
-            quran
+            quran,
+            input,
         }
     },
+    computed: {
+        filteredQuran() {
+            // search nama_latin dan arti
+            return this.quran.filter(quran => {
+                return quran.nama_latin.toLowerCase().includes(this.input.toLowerCase()) || quran.arti.toLowerCase().includes(this.input.toLowerCase())
+            })
+        }
+    }
 
     // code using onMounted
     // setup() {

@@ -7,7 +7,9 @@
             <!-- <hr> -->
             <div class="row">
                 <div class="col-md-6">
-                    <h2 class="fw-bold"><span v-text="quran.nama_latin" /> - <span v-text="quran.nama" /></h2>
+                    <h2 class="fw-bold">
+                        <span v-text="quran.nama_latin" /> - <span v-text="quran.nama" />
+                    </h2>
                     <span v-text="quran.arti" class="lead"></span>
                     <h6 v-text="'📃 Jumlah Ayat : ' + quran.jumlah_ayat + ' 🗺️ Tempat Turun : ' + quran.tempat_turun"
                         class="">
@@ -138,6 +140,8 @@ export default {
 
         //vue router
         const route = useRoute()
+
+        // await new Promise(resolve => setTimeout(resolve, 5000));
 
         // get API from Backend
         await axios.get(`https://equran.id/api/surat/${route.params.id}`)

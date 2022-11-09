@@ -1,16 +1,6 @@
 <template>
     <HomeVue />
 
-    <div class="container mb-2">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="input-group">
-                    <input type="text" class="form-control p-3" placeholder="Ketik nama surat dan enter..">
-                </div>
-            </div>
-        </div>
-    </div>
-
     <div v-if="errMsg" class="text-center mt-3 mb-4">{{ errMsg }}</div>
     <Suspense v-else>
         <template #default>
