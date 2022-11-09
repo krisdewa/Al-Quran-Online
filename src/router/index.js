@@ -13,14 +13,22 @@ const routes = [
         path: "/juz/",
         name: "juz",
         component: () =>
-            import(/* webpackChunkName: "home" */ "@/pages/Juz/Index.vue"),
+            import(/* webpackChunkName: "juz" */ "@/pages/Juz/Index.vue"),
     },
     {
         path: "/surah/:id",
         name: "surah",
         component: () =>
             import(
-                /* webpackChunkName: "home" */ "@/pages/DetailSurah/DetailSurahInfo.vue"
+                /* webpackChunkName: "surah" */ "@/pages/DetailSurah/DetailSurahInfo.vue"
+            ),
+    },
+    {
+        path: "/tafsir/:id",
+        name: "tafsir",
+        component: () =>
+            import(
+                /* webpackChunkName: "tafsir" */ "@/pages/Tafsir/DetailTafsirInfo.vue"
             ),
     },
 ];

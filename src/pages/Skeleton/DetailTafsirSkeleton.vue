@@ -8,17 +8,10 @@
                 <AnimatedPlaceholder width="150px" height="20px" borderRadius="5px" />
             </h1>
             <div class="row">
-
                 <div class="col-md-6">
                     <span class="lead">
                         <AnimatedPlaceholder width="160px" height="20px" borderRadius="5px" />
                     </span>
-                </div>
-
-                <div class="col-md-12 text-center justify-content-center">
-                    <div class="mt-1">
-                        <AnimatedPlaceholder width="100%" height="50px" borderRadius="5px" class="mt-2" />
-                    </div>
                 </div>
             </div>
         </div>
@@ -43,24 +36,12 @@
             <div class="col-md-12" v-for="(ayat, index) in ayat" :key="index">
                 <div class="card mt-4 shadow-sm">
                     <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-6 col-12">
-                                <h5 class="card-title nama-latin">
-                                    <AnimatedPlaceholder width="150px" height="20px" borderRadius="5px" />
-                                </h5>
-                                <p class="card-text mt-4 fst-italic">
-                                    <AnimatedPlaceholder width="200px" height="20px" borderRadius="5px" />
-                                </p>
-                            </div>
-                            <div class="col-md-6 col-12">
-                                <h2 class="text-end">
-                                    <AnimatedPlaceholder width="70px" height="20px" borderRadius="5px" />
-                                </h2>
-                                <p class="text-end">
-                                    <AnimatedPlaceholder width="100px" height="20px" borderRadius="5px" />
-                                </p>
-                            </div>
-                        </div>
+                        <h5 class="card-title">
+                            <AnimatedPlaceholder width="150px" height="20px" borderRadius="5px" />
+                        </h5>
+                        <p class="card-text mt-4">
+                            <AnimatedPlaceholder width="100%" height="200px" borderRadius="5px" />
+                        </p>
                     </div>
                 </div>
             </div>

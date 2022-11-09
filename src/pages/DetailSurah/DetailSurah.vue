@@ -10,20 +10,20 @@
                     <h2 class="fw-bold">
                         <span v-text="quran.nama_latin" /> - <span v-text="quran.nama" />
                     </h2>
-                    <span v-text="quran.arti" class="lead"></span>
-                    <h6 v-text="'📃 Jumlah Ayat : ' + quran.jumlah_ayat + ' 🗺️ Tempat Turun : ' + quran.tempat_turun"
-                        class="">
-                    </h6>
+                    <p class="text-capitalize"
+                        v-text="quran.tempat_turun + ' • ' + quran.jumlah_ayat + ' ayat' + ' • ' + quran.arti"></p>
                 </div>
                 <div class="col-md-6 text-end justify-content-end">
                     <div class="">
                         <div class="mt-1">
-                            <a class="btn btn-warning fw-bold" href="" role="button"> Lihat Tafsir </a>
+                            <router-link :to="{ name: 'tafsir', params: { id: quran.nomor } }"
+                                class="btn btn-warning fw-bold"> Lihat Tafsir </router-link>
+                            <!-- <a class="btn btn-warning fw-bold" href="" role="button"> Lihat Tafsir </a> -->
                         </div>
                     </div>
                 </div>
                 <div class="col-md-12 text-center justify-content-center">
-                    <div class="mt-3">
+                    <div class="">
                         <audio controls v-if="quran.audio">
                             <source v-bind:src="quran.audio" type="audio/mpeg" />
                             Your browser does not support the audio element.
@@ -107,6 +107,7 @@ export default {
     async setup() {
         //state posts
         const quran = reactive({
+            nomor: '',
             nama: '',
             nama_latin: '',
             arti: '',
@@ -148,6 +149,7 @@ export default {
             .then(response => {
 
                 //assign state posts with response data
+                quran.nomor = response.data.nomor
                 quran.nama_latin = response.data.nama_latin
                 quran.nama = response.data.nama
                 quran.arti = response.data.arti
