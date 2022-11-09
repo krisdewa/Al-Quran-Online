@@ -9,6 +9,8 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 //import router
 import router from "./router";
 
+import './registerServiceWorker'
+
 // create app
 const app = createApp(App);
 
