@@ -9,12 +9,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                    <!-- <li class="nav-item">
-                        <router-link :to="{ name: 'home' }" class="nav-link">SURAH</router-link>
-                    </li>
                     <li class="nav-item">
-                        <router-link :to="{ name: 'juz' }" class="nav-link">JUZ</router-link>
-                    </li> -->
+                        <router-link :to="{ name: 'home' }" class="nav-link">SURAT</router-link>
+                    </li>
                     <!-- dropdown -->
                     <!-- <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
