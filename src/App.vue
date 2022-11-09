@@ -4,9 +4,12 @@
         <ScrollToTopVue />
 
         <!-- render vue router -->
-        <!-- <keep-alive> -->
         <router-view :key="$route.fullPath"></router-view>
-        <!-- </keep-alive> -->
+        <!-- <router-view v-slot="{ Component, route }">
+            <transition name="fade">
+                <component :is="Component" :key="route.path" />
+            </transition>
+        </router-view> -->
     </div>
 </template>
 
@@ -36,12 +39,12 @@ body {
 }
 
 ::-webkit-scrollbar {
-    width: 8px;
+    width: 15px;
 }
 
 ::-webkit-scrollbar-track {
-    border-radius: 5px;
-    box-shadow: inset 0 0 10px rgb(0, 0, 0);
+    border-radius: 2px;
+    box-shadow: inset 0 0 10px rgb(149, 149, 149);
 }
 
 ::-webkit-scrollbar-thumb {

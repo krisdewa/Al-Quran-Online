@@ -101,7 +101,7 @@ export default {
     text-align: center;
     line-height: 46px;
     font-size: 24px;
-    color: #ffffff;
+    color: #ffc107;
     left: 0;
     top: 0;
     height: 46px;
@@ -147,7 +147,7 @@ export default {
 }
 
 .progress-wrap svg.progress-circle path {
-    stroke: #ffffff;
+    stroke: #ffc107;
     stroke-width: 5;
     box-sizing: border-box;
     -webkit-transition: all 200ms linear;
