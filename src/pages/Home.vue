@@ -1,11 +1,10 @@
 <template>
     <main class="container mt-custom ">
-        <div class="bg-success text-white p-5 rounded text-center shadow mb-4">
+        <div class="home bg-success text-white rounded text-center shadow mb-4">
             <h1>Al-Qur'an Online 📖</h1>
             <p class="lead content">
                 Baca Al-Qur'an secara Online dimana dan kapanpun saja dengan mudah
-                <br>
-                Al-Qur'an ini yang bersumber dari
+                <br> Al-Qur'an ini yang bersumber dari
                 <a href="https://quran.kemenag.go.id/" class="text-decoration-none text-warning"
                     target="_blank">Kementrian Agama Republik Indonesia
                 </a> dengan murottal
@@ -34,9 +33,17 @@ export default {
     margin-top: 95px;
 }
 
+.home {
+    padding: 30px;
+}
+
 @media screen and (max-width: 768px) {
+    .home {
+        padding: 15px;
+    }
+
     .content {
-        font-size: 12px;
+        font-size: 15px;
     }
 }
 </style>
