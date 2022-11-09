@@ -1,4 +1,14 @@
 <template>
+    <div class="container mb-2">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="input-group">
+                    <input type="text" class="form-control p-3" placeholder="Ketik nama surat...">
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- card -->
     <div class="container mt-2 mb-5">
         <div class="row">
