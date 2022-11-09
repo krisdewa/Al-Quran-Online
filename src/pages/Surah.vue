@@ -21,7 +21,7 @@
                             <h5 class="card-title nama-latin"> {{ surah.nomor }}. {{ surah.nama_latin }}
                                 <small>({{ surah.jumlah_ayat }} ayat)</small>
                             </h5>
-                            <p class="card-text">{{ surah.arti }}</p>
+                            <p class="card-text text-capitalize">{{ surah.tempat_turun + ' • ' + surah.arti }}</p>
                             <!-- <router-link :to="{ name: 'surah', params: { id: surah.nomor } }" class="btn btn-warning">
                                 Baca Surah
                             </router-link> -->
