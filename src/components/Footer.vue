@@ -1,7 +1,10 @@
 <template>
-    <footer class="footer bg-dark text-white p-3 mt-auto">
+    <footer class="footer bg-dark text-white p-3">
         <div class="container">
             <div class="row pt-5">
+                <div class="col-md-2 text-center">
+                    <img src="../../public/img/icons/favicon-32x32.png" class="justify-content-center logo" alt="">
+                </div>
                 <div class="col-md-6">
                     <h5>Al-Qur'an Online</h5>
                     <p class="text-muted">
@@ -12,13 +15,22 @@
                         <strong>Misyari Rasyid Al-'Afasi</strong>.
                     </p>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-2">
+                    <h5>Social Media</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="https://www.instagram.com/krisdewa_/?hl=id" class="text-decoration-none text-white"
+                                target="_blank">Instagram</a>
+                        </li>
+                        <li><a href="https://www.linkedin.com/in/krisna-dewa-pratama-9aa907153/"
+                                class="text-decoration-none text-white" target="_blank">Linkedin</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
                     <h5>Contribute Here</h5>
                     <ul class="list-unstyled">
                         <li><a href="https://github.com/krisdewa/Al-Quran-Online"
                                 class="text-decoration-none text-white" target="_blank">Github </a></li>
-                        <li><a href="https://www.instagram.com/krisdewa_/?hl=id" class="text-decoration-none text-white"
-                                target="_blank">Instagram</a></li>
                     </ul>
                 </div>
             </div>
@@ -45,5 +57,19 @@ export default {
 <style scoped>
 .mt-9 {
     margin-top: 9rem;
+}
+
+img.logo {
+    width: 75%;
+}
+
+@media only screen and (max-width: 768px) {
+    img.logo {
+        width: 50%;
+    }
+
+    .footer {
+        text-align: center;
+    }
 }
 </style>

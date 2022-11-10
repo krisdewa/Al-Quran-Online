@@ -59,22 +59,12 @@
             <div class="col-md-12" v-for="(ayat, index) in ayat" :key="index">
                 <div class="card mt-3 shadow-sm">
                     <div class="card-body">
-                        <!-- <div class="row">
-                            <div class="col-md-6 col-12">
-                                <h5 class="card-title nama-latin"> {{ ayat.surah }} : {{ ayat.nomor }} </h5>
-                                <p class="card-text mt-4 fst-italic"> {{ ayat.idn }}</p>
-                            </div>
-                            <div class="col-md-6 col-12 text-end">
-                                <h2> {{ ayat.ar }} </h2>
-                                <p class="tr"><span v-html="ayat.tr"> </span></p>
-                            </div>
-                        </div> -->
                         <div class="row">
                             <div class="col-md-6 col-12">
                                 <h5 class="card-title nama-latin mb-2"> {{ ayat.surah }} : {{ ayat.nomor }} </h5>
                             </div>
                             <div class="col-md-6 col-12">
-                                <h2 class="text-end"> {{ ayat.ar }} </h2>
+                                <h1 class="text-end"> {{ ayat.ar }} </h1>
                                 <p class="text-end"><span v-html="ayat.tr"> </span></p>
                             </div>
                             <div class="col-md-6 col-12">

@@ -2,16 +2,16 @@
     <main class="container mt-custom">
         <div class="bg-success p-4 rounded shadow text-white">
             <h1 class="float-end">
-                <AnimatedPlaceholder width="70px" height="20px" borderRadius="5px" />
+                <AnimatedPlaceholder width="110px" height="6px" borderRadius="5px" />
             </h1>
             <h1 class="">
-                <AnimatedPlaceholder width="150px" height="20px" borderRadius="5px" />
+                <AnimatedPlaceholder width="250px" height="20px" borderRadius="5px" />
             </h1>
             <div class="row">
 
                 <div class="col-md-6">
                     <span class="lead">
-                        <AnimatedPlaceholder width="160px" height="20px" borderRadius="5px" />
+                        <AnimatedPlaceholder width="180px" height="20px" borderRadius="5px" />
                     </span>
                 </div>
 
@@ -45,19 +45,21 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-6 col-12">
-                                <h5 class="card-title nama-latin">
+                                <h5 class="card-title nama-latin mb-2">
                                     <AnimatedPlaceholder width="150px" height="20px" borderRadius="5px" />
                                 </h5>
-                                <p class="card-text mt-4 fst-italic">
-                                    <AnimatedPlaceholder width="200px" height="20px" borderRadius="5px" />
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <h1 class="text-end">
+                                    <AnimatedPlaceholder width="70px" height="20px" borderRadius="5px" />
+                                </h1>
+                                <p class="text-end">
+                                    <AnimatedPlaceholder width="100px" height="20px" borderRadius="5px" />
                                 </p>
                             </div>
                             <div class="col-md-6 col-12">
-                                <h2 class="text-end">
-                                    <AnimatedPlaceholder width="70px" height="20px" borderRadius="5px" />
-                                </h2>
-                                <p class="text-end">
-                                    <AnimatedPlaceholder width="100px" height="20px" borderRadius="5px" />
+                                <p class="card-text fst-italic text-muted">
+                                    <AnimatedPlaceholder width="200px" height="20px" borderRadius="5px" />
                                 </p>
                             </div>
                         </div>
