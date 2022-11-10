@@ -3,8 +3,8 @@
     <div class="container mb-2">
         <div class="row">
             <div class="col-md-12">
-                <div class="input-group">
-                    <input type="text" v-model="input" class="form-control p-3" placeholder="Ketik nama surat...">
+                <div class="search">
+                    <input type="text" v-model="input" class="search" placeholder="Ketik nama surat...">
                 </div>
             </div>
         </div>
@@ -17,17 +17,26 @@
                     class="text-decoration-none text-dark">
                     <div class="card mt-4">
                         <div class="card-body card-custom">
-                            <h2 class="float-end"> {{ surah.nama }} </h2>
-                            <h5 class="card-title nama-latin"> {{ surah.nomor }}. {{ surah.nama_latin }}
-                                <small>({{ surah.jumlah_ayat }} ayat)</small>
-                            </h5>
+
+                            <router-link :to="{ name: 'surah', params: { id: surah.nomor } }"
+                                class="text-decoration-none text-success">
+                                <h2 class="float-end"> {{ surah.nama }} </h2>
+                            </router-link>
+
+                            <router-link :to="{ name: 'surah', params: { id: surah.nomor } }"
+                                class="text-decoration-none text-success">
+                                <h5 class="card-title nama-latin"> {{ surah.nomor }}. {{ surah.nama_latin }}
+                                    <small>({{ surah.jumlah_ayat }} ayat)</small>
+                                </h5>
+                            </router-link>
+                            
                             <p class="card-text text-capitalize">{{ surah.tempat_turun + ' • ' + surah.arti }}</p>
-                            <!-- <router-link :to="{ name: 'surah', params: { id: surah.nomor } }" class="btn btn-warning">
-                                Baca Surah
-                            </router-link> -->
                         </div>
                     </div>
                 </router-link>
+            </div>
+            <div v-if="input && !filteredQuran.length" class="mt-5 mb-5">
+                <h3 class="text-center mt-5 mb-5">Surat tidak ditemukan</h3>
             </div>
         </div>
     </div>
@@ -109,19 +118,44 @@ export default {
     border-top-right-radius: 20px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 3px;
+    transition: all 0.15s ease-in-out;
 }
 
 .card-body:hover {
     background-color: rgb(246, 246, 246);
-    box-shadow: 0 0px 10px 0 rgba(0, 0, 0, 0.5);
     border-top-left-radius: 3px;
     border-top-right-radius: 20px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 3px;
+    box-shadow: 0 0px 10px 0 rgba(0, 0, 0, 0.5);
+    transition: all 0.15s ease-in-out;
 }
 
 
 h5.nama-latin {
     font-weight: 700;
+}
+
+.search {
+    width: 100%;
+    height: 60px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.15s ease-in-out;
+}
+
+.search:focus {
+    box-shadow: 0 0px 10px 0 rgba(151, 151, 151, 0.5);
+    transition: all 0.15s ease-in-out;
+}
+
+input {
+    padding: 15px;
+}
+
+input::placeholder {
+    color: #aaa;
 }
 </style>

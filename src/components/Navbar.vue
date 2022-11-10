@@ -1,7 +1,9 @@
 <template>
     <nav class="navbar navbar-expand-md navbar-warning fixed-top bg-warning py-3">
         <div class="container">
-            <router-link :to="{ name: 'home' }" class="navbar-brand" aria-current="page">AL-QUR'AN ONLINE
+            <router-link :to="{ name: 'home' }" class="navbar-brand" aria-current="page"> <img
+                    src="../../public/img/icons/favicon-16x16.png" class="img justify-content-center" alt="" />
+                AL-QUR'AN ONLINE
             </router-link>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,7 +30,8 @@
                         </ul>
                     </li> -->
                 </ul>
-                <a href="https://krisproject.my.id" class="btn btn-success float-end" target="_blank">KRISPROJECT 🔗
+                <a href="https://krisproject.my.id" class="btn btn-success float-end btn-custom"
+                    target="_blank">KRISPROJECT 🔗
                 </a>
             </div>
         </div>
@@ -38,6 +41,21 @@
 <style scoped>
 .navbar-brand {
     font-weight: bold;
+}
+
+img {
+    width: 35px;
+    height: 35px;
+}
+
+@media only screen and (max-width: 768px) {
+    .navbar {
+        text-align: center;
+    }
+
+    .btn-custom {
+        width: 100%;
+    }
 }
 </style>
 
