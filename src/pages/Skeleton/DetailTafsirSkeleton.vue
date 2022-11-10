@@ -2,10 +2,10 @@
     <main class="container mt-custom">
         <div class="bg-success p-4 rounded shadow text-white">
             <h1 class="float-end">
-                <AnimatedPlaceholder width="70px" height="20px" borderRadius="5px" />
+                <AnimatedPlaceholder width="110px" height="6px" borderRadius="5px" />
             </h1>
             <h1 class="">
-                <AnimatedPlaceholder width="150px" height="20px" borderRadius="5px" />
+                <AnimatedPlaceholder width="250px" height="20px" borderRadius="5px" />
             </h1>
             <div class="row">
                 <div class="col-md-6">
